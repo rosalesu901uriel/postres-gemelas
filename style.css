@@ -1,0 +1,233 @@
+:root{
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+    --blanco: #FFF;
+    --negro: #000000;
+    --rosa: #FFC1CC;
+    --rosaClaro: #FFF0F3;
+    --rojoFresa: #E63946;
+    --crema: #FFFDD0;
+    --gris: #e1e1e1;
+}
+
+html { 
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuenteParrafos);
+    background-color: var(--rosaClaro);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p{/*parrafos iguales*/
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--negro);
+}
+
+/*enlaces sin interlineado*/
+a{
+    text-decoration: none;
+}
+/*img{
+    width: 100%;
+    height: auto;
+}*/
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.sombra{ /*body dentro de cuadro con degradado*/
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.53);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.53);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.53);
+    background-color: var(--blanco);
+    padding:2rem ;
+    border-radius: 1rem;/*esquinas redondeadas*/
+}
+h1,h2,h3{
+    font-family: var(--fuenteHeading);
+    text-align: center;
+}
+h2{
+    color:var(--negro) ;
+}
+
+
+/*header*/
+.header{
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url(img/fondo.png);
+    height: 45rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+.header__texto{
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 5rem;
+}
+@media (min-width: 768px) {
+    .header__texto{
+        margin-top: 15rem;
+    }
+}
+
+.barra{
+    padding-top: 4rem;
+}
+@media (min-width: 768px) {
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.logo__nombre{
+    font-weight: 400;
+    color: var(--blanco);
+}
+
+.header__logo{
+    margin: 3rem 0;
+    width: 200px;
+
+}
+
+/*footer*/
+.footer{
+    background-color: var(--crema);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__texto{
+    text-align: center;
+    font-size: 2.2rem;
+}
+/*navegacion*/
+@media (min-width: 768px) {
+    .navegacion{
+   display: flex;
+    gap: 2rem;
+}   
+}
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    font-size: 1.8rem;
+}
+.navegacion__enlace--activo,/*este es el modificador de BEM que indicara el cambio de color cuando cambien de pagina*/
+.navegacion__enlace:hover{
+    color: var(--rojoFresa);
+}
+
+/*Grid para los productos*/
+/*vista para celular*/
+.grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+/*vista desde laptop y tablets*/
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/*productos*/
+.producto{
+    
+    padding: 1rem;
+}
+.producto__nombre{
+    font-size: 3rem;
+    font-family: var(--fuenteHeading);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+/* Estilo para que todas las imágenes midan lo mismo */
+.producto__imagen {
+    width: 100%;           /* Ocupa el ancho del grid */
+    height: 30rem;         /* Ajusta esta altura a tu gusto (ej. 25rem o 30rem) */
+    object-fit: cover;     /* MÁGICO: Corta el exceso sin deformar la imagen */
+    object-position: center; 
+    border-radius: 1.5rem; /* Le da un toque moderno y suave */
+    transition: transform .3s ease; /* Prepara la animación para el hover */
+}
+
+/* Efecto visual cuando pasas el mouse */
+.producto__imagen:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.entrada{
+    border-bottom: 1px solid var(--negro);
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+}
+main.contenedor > .entrada:last-of-type {
+    border-bottom: none;
+}
+/* Quitamos la línea al último producto para que se vea más limpio 
+.entrada:last-of-type {
+    border-bottom: none;
+}*/
+
+.footer{
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+/*pagina productos*/
+.comida__imagen{
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    grid-row: 1 / 2;
+}
+
+.comida__contenido p{
+    text-align: left;
+
+}
+.precio{
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--rojoFresa);
+}
+
+@media (min-width: 768px) {
+    .comida{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 4rem;
+        align-items: center;
+        margin-top: 5rem;
+    }
+}
+@media (min-width: 768px) {
+    .comida__imagen{
+        height: 35rem;
+        object-fit: cover;
+        border-radius: 2rem;
+    }
+    
+}
+
+/*contacto sobre nosotros*/
+.logo2{
+    width: 100%;
+    height: 35rem;
+    border-radius: 2rem;
+    grid-row: 1 / 2;
+}
