@@ -164,6 +164,43 @@ h2{
     }
 }
 
+/* --- Estilos del Overlay --- */
+.overlay {
+    display: none; /* Escondido por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Negro con 70% de transparencia */
+    z-index: 1500; /* Debe estar POR DEBAJO del menú (2000) pero POR ENCIMA de la página */
+    cursor: pointer;
+}
+
+/* Clase para mostrar el overlay con JS */
+.mostrar-overlay {
+    display: block;
+}
+
+/* Estilo para la X (por si no lo habías puesto) */
+.cerrar-menu {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+#btn-cerrar {
+    color: var(--blanco);
+    font-size: 4rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .overlay, .cerrar-menu {
+        display: none !important; /* Desaparece totalmente en computadora */
+    }
+}
 .navegacion__enlace:hover{
     color: var(--rojoFresa);
 }
