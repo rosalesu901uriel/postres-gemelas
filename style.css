@@ -23,6 +23,7 @@ body{
     background-color: var(--rosaClaro);
     font-size: 1.6rem;
     line-height: 1.5;
+    margin: 0;
 }
 
 p{/*parrafos iguales*/
@@ -35,46 +36,45 @@ p{/*parrafos iguales*/
 a{
     text-decoration: none;
 }
-/*img{
-    width: 100%;
-    height: auto;
-}*/
 
 .contenedor{
     max-width: 120rem;
     margin: 0 auto;
 }
+
 .sombra{ /*body dentro de cuadro con degradado*/
     -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.53);
     -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.53);
     box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.53);
     background-color: var(--blanco);
-    padding:2rem ;
+    padding: 2rem ;
     border-radius: 1rem;/*esquinas redondeadas*/
 }
+
 h1,h2,h3{
     font-family: var(--fuenteHeading);
     text-align: center;
 }
+
 h2{
     color:var(--negro) ;
 }
 
-
-/*header*/
+/* --- HEADER --- */
 .header{
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8)), url(img/fondo.png);
     height: 45rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-
 }
+
 .header__texto{
     text-align: center;
     color: var(--blanco);
     margin-top: 5rem;
 }
+
 @media (min-width: 768px) {
     .header__texto{
         margin-top: 15rem;
@@ -82,72 +82,109 @@ h2{
 }
 
 .barra{
-    padding-top: 4rem;
+    padding: 4rem 2rem 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-@media (min-width: 768px) {
-    .barra{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
+
 .logo__nombre{
     font-weight: 400;
     color: var(--blanco);
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.header__logo{
-    margin: 3rem 0;
-    width: 200px;
-
+.logo__bold{
+    font-weight: 700;
 }
 
-/*footer*/
-.footer{
-    background-color: var(--crema);
-    padding: 1rem 0;
-    margin-top: 2rem;
+/* --- NAVEGACIÓN (Móvil y Escritorio) --- */
+
+.mobile-menu {
+    display: block; /* Se ve en móvil */
+    cursor: pointer;
 }
-.footer__texto{
-    text-align: center;
-    font-size: 2.2rem;
+
+.mobile-menu img {
+    width: 4rem; /* Tamaño del icono de barras */
+    height: auto;
 }
-/*navegacion*/
+
+/* Vista Celular */
+@media (max-width: 767px) {
+    .navegacion {
+        display: none; /* Escondido por defecto para que no flote sobre la imagen */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        width: 75%;
+        height: 100vh;
+        padding: 10rem 3rem;
+        flex-direction: column;
+        gap: 3rem;
+        transition: right .4s ease-in-out;
+        z-index: 2000;
+    }
+
+    .navegacion.mostrar-menu {
+        display: flex; /* Se activa con el JS */
+        right: 0;
+    }
+
+    .navegacion__enlace {
+        font-size: 2.8rem;
+        text-align: left;
+        color: var(--blanco);
+        border-bottom: 1px solid var(--gris);
+        padding-bottom: 1.5rem;
+    }
+}
+
+/* Vista Laptop / Tablet */
 @media (min-width: 768px) {
-    .navegacion{
-   display: flex;
-    gap: 2rem;
-}   
+    .mobile-menu {
+        display: none; /* DESAPARECE el icono de barras en computadora */
+    }
+
+    .navegacion {
+        display: flex; /* Los links vuelven a aparecer horizontales */
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        padding: 0;
+        gap: 2rem;
+    }
+
+    .navegacion__enlace {
+        color: var(--blanco);
+        font-size: 1.8rem;
+    }
 }
-.navegacion__enlace{
-    display: block;
-    text-align: center;
-    color: var(--blanco);
-    font-size: 1.8rem;
-}
-.navegacion__enlace--activo,/*este es el modificador de BEM que indicara el cambio de color cuando cambien de pagina*/
+
 .navegacion__enlace:hover{
     color: var(--rojoFresa);
 }
 
-/*Grid para los productos*/
-/*vista para celular*/
+/* --- GRID PRODUCTOS --- */
 .grid{
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
 }
-/*vista desde laptop y tablets*/
+
 @media (min-width: 768px) {
     .grid{
         grid-template-columns: repeat(3, 1fr);
     }
 }
-/*productos*/
+
 .producto{
-    
     padding: 1rem;
 }
+
 .producto__nombre{
     font-size: 3rem;
     font-family: var(--fuenteHeading);
@@ -155,40 +192,33 @@ h2{
     text-align: center;
     line-height: 1.2;
 }
+
 /* Estilo para que todas las imágenes midan lo mismo */
 .producto__imagen {
-    width: 100%;           /* Ocupa el ancho del grid */
-    height: 30rem;         /* Ajusta esta altura a tu gusto (ej. 25rem o 30rem) */
-    object-fit: cover;     /* MÁGICO: Corta el exceso sin deformar la imagen */
+    width: 100%;
+    height: 30rem;
+    object-fit: cover; /* Corta el exceso sin deformar */
     object-position: center; 
-    border-radius: 1.5rem; /* Le da un toque moderno y suave */
-    transition: transform .3s ease; /* Prepara la animación para el hover */
+    border-radius: 1.5rem;
+    transition: transform .3s ease;
 }
 
-/* Efecto visual cuando pasas el mouse */
 .producto__imagen:hover {
     transform: scale(1.03);
     cursor: pointer;
 }
-.entrada{
+
+.entrada {
     border-bottom: 1px solid var(--negro);
     margin-bottom: 4rem;
     padding-bottom: 4rem;
 }
+
 main.contenedor > .entrada:last-of-type {
     border-bottom: none;
 }
-/* Quitamos la línea al último producto para que se vea más limpio 
-.entrada:last-of-type {
-    border-bottom: none;
-}*/
 
-.footer{
-    background-color: var(--negro);
-    padding-bottom: 3rem;
-    margin-top: 4rem;
-}
-/*pagina productos*/
+/* --- PÁGINA PRODUCTO INDIVIDUAL --- */
 .comida__imagen{
     width: 100%;
     height: auto;
@@ -198,12 +228,24 @@ main.contenedor > .entrada:last-of-type {
 
 .comida__contenido p{
     text-align: left;
-
 }
+
+/* Estilo para nombres de platillos en el menú */
+.producto-titulo {
+    font-family: var(--fuenteHeading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .precio{
     font-weight: 700;
     font-size: 2.4rem;
     color: var(--rojoFresa);
+    margin-bottom: 3rem;
 }
 
 @media (min-width: 768px) {
@@ -214,20 +256,22 @@ main.contenedor > .entrada:last-of-type {
         align-items: center;
         margin-top: 5rem;
     }
-}
-@media (min-width: 768px) {
+    
     .comida__imagen{
         height: 35rem;
         object-fit: cover;
         border-radius: 2rem;
     }
-    
 }
 
-/*contacto sobre nosotros*/
-.logo2{
-    width: 100%;
-    height: 35rem;
-    border-radius: 2rem;
-    grid-row: 1 / 2;
+/* --- FOOTER --- */
+.footer{
+    background-color: var(--negro);
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.footer__texto{
+    text-align: center;
+    font-size: 2.2rem;
 }

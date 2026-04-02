@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postres</title>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"  
-    crossorigin="crossorigin" as="font">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        crossorigin="crossorigin" as="font">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="contenedor">
             <div class="barra">
                 <a class="logo" href="index.html">
-                    <h1 class="logo__nombre centrar-texto no margin">Postres<span class="logo__bold no margin">Gemelas</span></h1>
+                    <h1 class="logo__nombre centrar-texto no-margin">Postres <span class="logo__bold">Gemelas</span>
+                    </h1>
                 </a>
 
-                <nav class="navegacion">
+                <div class="mobile-menu">
+                    <img src="img/iconoBarras.png" alt="icono menu" id="boton-menu">
+                </div>
+
+                <nav class="navegacion" id="navegacion">
                     <a href="index.html" class="navegacion__enlace">Inicio</a>
                     <a href="contacto.html" class="navegacion__enlace">Contacto</a>
                 </nav>
@@ -36,62 +46,70 @@
         <h1>Frappes</h1>
 
         <div class="comida entrada">
-            <img class="comida__imagen " src="img/frapChocolate.png" alt="imagen del producto" >
+            <img class="comida__imagen " src="img/frapChocolate.png" alt="imagen del producto">
 
             <div class="comida__contenido">
-                <p>Chocolate</p>
+                <p class="producto-titulo">Chocolate</p>
                 <p class="precio">Precio: $55</p>
             </div>
         </div>
 
         <div class="comida entrada">
-            <img class="comida__imagen " src="img/cafe.png" alt="imagen del producto" >
+            <img class="comida__imagen " src="img/cafe.png" alt="imagen del producto">
 
             <div class="comida__contenido">
-                <p>Café</p>
+                <p class="producto-titulo">Café</p>
                 <p class="precio">Precio: $55</p>
             </div>
         </div>
 
-         <div class="comida entrada">
-            <img class="comida__imagen " src="img/frapOreo.jpg" alt="imagen del producto" >
+        <div class="comida entrada">
+            <img class="comida__imagen " src="img/frapOreo.jpg" alt="imagen del producto">
 
             <div class="comida__contenido">
-                <p>Galleta Oreo</p>
+                <p class="producto-titulo">Galleta Oreo</p>
                 <p class="precio">Precio: $60</p>
             </div>
         </div>
 
-          <div class="comida entrada">
-            <img class="comida__imagen " src="img/moka.png" alt="imagen del producto" >
+        <div class="comida entrada">
+            <img class="comida__imagen " src="img/moka.png" alt="imagen del producto">
 
             <div class="comida__contenido">
-                <p>Moka</p>
+                <p class="producto-titulo">Moka</p>
                 <p class="precio">Precio: $60</p>
 
             </div>
         </div>
 
         <div class="comida entrada">
-            <img class="comida__imagen " src="img/frapFresa.png" alt="imagen del producto" >
+            <img class="comida__imagen " src="img/frapFresa.png" alt="imagen del producto">
             <div class="comida__contenido">
-                <p>Fresa</p>
+                <p class="producto-titulo">Fresa</p>
                 <p class="precio">Precio: $60</p>
             </div>
         </div>
 
         <div class="comida entrada">
-            <img class="comida__imagen " src="img/gansito.png" alt="imagen del producto" >
+            <img class="comida__imagen " src="img/mazapan.jpg" alt="imagen del producto">
             <div class="comida__contenido">
-                <p>Gansito</p>
+                <p class="producto-titulo">Mazapán</p>
+                <p class="precio">Precio: $65</p>
+            </div>
+        </div>
+
+        <div class="comida entrada">
+            <img class="comida__imagen " src="img/gansito.png" alt="imagen del producto">
+            <div class="comida__contenido">
+                <p class="producto-titulo">Gansito</p>
                 <p class="precio">Precio: $70</p>
             </div>
         </div>
 
         <div class="comida entrada">
-            <img class="comida__imagen " src="img/kinder.png" alt="imagen del producto" >
+            <img class="comida__imagen " src="img/kinder.png" alt="imagen del producto">
             <div class="comida__contenido">
-                <p>Kinder Delice</p>
+                <p class="producto-titulo">Kinder Delice</p>
                 <p class="precio">Precio: $75</p>
             </div>
         </div>
@@ -101,7 +119,8 @@
         <div class="contenedor">
             <div class="barra">
                 <a class="logo" href="index.html">
-                    <h1 class="logo__nombre centrar-texto no margin">Postres<span class="logo__bold no-margin">Gemelas</span></h1>
+                    <h1 class="logo__nombre centrar-texto no margin">Postres<span
+                            class="logo__bold no-margin">Gemelas</span></h1>
                 </a>
 
                 <nav class="navegacion">
@@ -111,6 +130,7 @@
             </div>
         </div>
     </footer>
-    
+    <script src="navegacion.js"></script>
 </body>
+
 </html>

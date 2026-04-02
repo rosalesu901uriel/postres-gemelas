@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postres</title>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"  
-    crossorigin="crossorigin" as="font">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        crossorigin="crossorigin" as="font">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="contenedor">
             <div class="barra">
                 <a class="logo" href="index.html">
-                    <h1 class="logo__nombre centrar-texto no margin">Postres<span class="logo__bold no margin">Gemelas</span></h1>
+                    <h1 class="logo__nombre centrar-texto no-margin">Postres <span class="logo__bold">Gemelas</span>
+                    </h1>
                 </a>
 
-                <nav class="navegacion">
+                <div class="mobile-menu">
+                    <img src="img/iconoBarras.png" alt="icono menu" id="boton-menu">
+                </div>
+
+                <nav class="navegacion" id="navegacion">
                     <a href="index.html" class="navegacion__enlace">Inicio</a>
                     <a href="contacto.html" class="navegacion__enlace">Contacto</a>
                 </nav>
@@ -37,10 +47,10 @@
         <h2>Incluyen papas</h2>
 
         <div class="comida entrada">
-            <img class="comida__imagen " src="img/hot-dogs.png" alt="imagen del producto" >
+            <img class="comida__imagen " src="img/hot-dogs.png" alt="imagen del producto">
 
             <div class="comida__contenido">
-                <p>Orden de 3 Hot - Dogs</p>
+                <p class="producto-titulo">Orden de 3 Hot - Dogs</p>
                 <p>Jitomate, cebolla caramelizada, chiles, mostaza y catsup. </p>
                 <p class="precio">Precio: $55</p>
             </div>
@@ -51,7 +61,8 @@
         <div class="contenedor">
             <div class="barra">
                 <a class="logo" href="index.html">
-                    <h1 class="logo__nombre centrar-texto no margin">Postres<span class="logo__bold no-margin">Gemelas</span></h1>
+                    <h1 class="logo__nombre centrar-texto no margin">Postres<span
+                            class="logo__bold no-margin">Gemelas</span></h1>
                 </a>
 
                 <nav class="navegacion">
@@ -61,6 +72,7 @@
             </div>
         </div>
     </footer>
-    
+       <script src="navegacion.js"></script>
 </body>
+
 </html>
