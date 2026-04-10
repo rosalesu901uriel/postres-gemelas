@@ -51,8 +51,8 @@ a{
     border-radius: 1rem;/*esquinas redondeadas*/
 }
 
-h1,h2,h3{
-    font-family: var(--fuenteHeading);
+h1,h2{
+   font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
 
@@ -282,20 +282,23 @@ main.contenedor > .entrada:last-of-type {
 
 /* Estilo para nombres de platillos en el menú */
 .producto-titulo {
-    font-family: var(--fuenteHeading);
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--negro);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .precio{
     font-weight: 700;
     font-size: 2.4rem;
     color: var(--rojoFresa);
-    margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 @media (min-width: 768px) {
@@ -313,6 +316,43 @@ main.contenedor > .entrada:last-of-type {
         border-radius: 2rem;
     }
 }
+
+/* --- BOTÓN FLOTANTE SUBIR --- */
+.btn-subir {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Se queda fijo en la pantalla */
+    bottom: 20px; /* Separación del borde inferior */
+    right: 20px; /* Separación del borde derecho */
+    z-index: 99; /* Por encima de todo */
+    border: none;
+    outline: none;
+    background-color: var(--rojoFresa); /* Usamos tu variable de color rojo */
+    color: var(--negro);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Lo hace circular */
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, opacity 0.3s;
+    width: 50px;
+    height: 50px;
+    touch-action: manipulation; /* Optimiza el clic eliminando el retraso de 300ms */
+    user-select: none; /* Evita que se seleccione el botón si dejas el dedo puesto */
+    -webkit-tap-highlight-color: transparent; /* Quita el recuadro feo que sale al tocarlo */
+}
+
+.btn-subir:hover {
+    background-color: var(--negroMatte); /* Cambia de color al pasar el mouse */
+}
+
+.btn-subir img {
+    width: 100%; /* Ajusta tu icono al tamaño del botón */
+}
+
+/* Clase que agregaremos con JS para mostrarlo */
+.mostrar-btn {
+    display: block !important;
+}
+
 
 /* --- FOOTER --- */
 .footer{

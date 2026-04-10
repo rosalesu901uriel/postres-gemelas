@@ -27,3 +27,34 @@ navegacion.addEventListener('click', (e) => {
         cerrarTodo();
     }
 });
+
+/* ==========================================
+   BOTÓN FLOTANTE (BACK TO TOP)
+   ========================================== */
+// 1. Seleccionamos el botón por su ID
+const btnSubir = document.querySelector('#btn-subir');
+
+// 2. Escuchamos el evento 'scroll' en la ventana del navegador
+window.onscroll = function() {
+    // Si el scroll bajó más de 300px desde el tope...
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        // ...agregamos la clase que lo hace visible
+        btnSubir.classList.add('mostrar-btn');
+    } else {
+        // ...si está cerca del tope, se la quitamos para que desaparezca
+        btnSubir.classList.remove('mostrar-btn');
+    }
+};
+
+
+// 3. Escuchamos el evento 'pointerup' (funciona mejor que 'click' en móviles)
+btnSubir.addEventListener('pointerup', (e) => {
+    // Evitamos cualquier comportamiento extraño por defecto
+    e.preventDefault();
+
+    // Ejecuta el movimiento hacia arriba
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+    });
+});
