@@ -39,10 +39,11 @@ a{
 }
 
 .contenedor{
-    max-width: 120rem;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0 2rem;
 
 }
+
 
 .sombra{ /*body dentro de cuadro con degradado*/
     -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.53);
