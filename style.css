@@ -8,6 +8,7 @@
     --rojoFresa: #E63946;
     --crema: #FFFDD0;
     --gris: #e1e1e1;
+    --negroCard: #333;
 }
 
 html { 
@@ -40,6 +41,7 @@ a{
 .contenedor{
     max-width: 120rem;
     margin: 0 auto;
+
 }
 
 .sombra{ /*body dentro de cuadro con degradado*/
@@ -251,6 +253,17 @@ h2{
     object-position: center; 
     border-radius: 1.5rem;
     transition: transform .3s ease;
+}
+
+.producto__sombra{
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 4rem;
 }
 
 .producto__imagen:hover {
