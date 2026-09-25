@@ -318,10 +318,11 @@ main.contenedor > .entrada:last-of-type {
 @media (min-width: 768px) {
     .comida{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         column-gap: 4rem;
         align-items: center;
         margin-top: 5rem;
+        
     }
     
     .comida__imagen{
